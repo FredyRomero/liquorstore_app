@@ -3,26 +3,16 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7318f1a5-1c47-44b4-9356-52ae5c93cfe1" name="Default Changelist" comment="eliminar codigo comentadoe innecesario" />
+    <list default="true" id="7318f1a5-1c47-44b4-9356-52ae5c93cfe1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/liquorstore_demo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data/liquorstore_demo.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liquorstore_alcohol.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/liquorstore_alcohol.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liquorstore_alcohol_tipo.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/liquorstore_alcohol_tipo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/liquorstore_security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/security/liquorstore_security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/description/imgliquorestore.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/description/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/alcohol_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/alcohol_view.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,8 +40,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jardineria_app" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -62,42 +52,6 @@
       <option name="presentableId" value="Default" />
       <updated>1613414875290</updated>
     </task>
-    <task id="LOCAL-00001" summary="En este commit se agrega el modelo Tipos">
-      <created>1613459069855</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1613459069855</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Actualizacion de alcohol_view.xml(agragado el precio)">
-      <created>1613547150496</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1613547150496</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Validacion del precio incorporada(Funcionaldad)">
-      <created>1613554266300</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1613554266300</updated>
-    </task>
-    <task id="LOCAL-00004" summary="poner precios de demo">
-      <created>1613731442948</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1613731442948</updated>
-    </task>
-    <task id="LOCAL-00005" summary="eliminar codigo comentadoe innecesario">
-      <created>1613737099536</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1613737099536</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,34 +70,5 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="En este commit se agrega el modelo Tipos" />
-    <MESSAGE value="Actualizacion de alcohol_view.xml(agragado el precio)" />
-    <MESSAGE value="Validacion del precio incorporada" />
-    <MESSAGE value="Validacion del precio incorporada(Funcionaldad)" />
-    <MESSAGE value="poner precios de demo" />
-    <MESSAGE value="eliminar codigo comentadoe innecesario" />
-    <option name="LAST_COMMIT_MESSAGE" value="eliminar codigo comentadoe innecesario" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1633" y="185" width="1039" height="622" key="MergeDialog" timestamp="1613737134969">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1633" y="185" width="1039" height="622" key="MergeDialog/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613737134969" />
-    <state x="1793" y="258" width="728" height="475" key="MultipleFileMergeDialog" timestamp="1613737134971">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1793" y="258" width="728" height="475" key="MultipleFileMergeDialog/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613737134971" />
-    <state x="1820" y="159" key="SettingsEditor" timestamp="1613547251009">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1820" y="159" key="SettingsEditor/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613547251009" />
-    <state x="1926" y="260" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1613737163097">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1926" y="260" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613737163097" />
-    <state x="2140" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613737351229">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2140" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613737351229" />
   </component>
 </project>

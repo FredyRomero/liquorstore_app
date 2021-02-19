@@ -22,7 +22,7 @@
 	</record>
 
 
-	<data noupdate="0">
+	<data noupdate="1">
 		<record id="alcohol_user_rule" model="ir.rule">
 			<field name="name">Liquor Store Alcohol User Access</field>
 			<field name="model_id" ref="model_liquorstore_alcohol"/>

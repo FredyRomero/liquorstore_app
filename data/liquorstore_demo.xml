@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <odoo noupdate="1">
 
+
 	<record model="liquorstore.alcohol" id="liquorstore_alcohol_esa1">
 		<field name="name">Captain Morgan</field>
         <field name="marca">Ron</field>
@@ -8,7 +9,8 @@
 			Caribe del siglo XVII originario de Gales,
 			Sir Henry Morgan. El eslogan de Captain Morgan es:
 			“¿Hay un pequeño capitán en ti?”.</field>
-		<field name="precio">20</field>
+		<field name="precio">20.00</field>
+		<field name="image" type="base64" file="liquorstore_app/static/images/captain-morgan.png"/>
 	</record>
 
 
@@ -19,7 +21,8 @@
 			vodka de China, es una bebida alcohólica china.
 			Es un tipo de baijiu hecho de sorgo.
 			Estrella Roja es su marca más conocida..</field>
-		<field name="precio">25</field>
+		<field name="precio">25.00</field>
+		<field name="image" type="base64" file="liquorstore_app/static/images/red-star.png"/>
 	</record>
 
 
@@ -30,7 +33,8 @@
 			De gran importancia en EE.UU., donde el 20% del vodka importado allí
 			es Absolut. La marca cuenta con distintos sabores,
 			para darle un toque alternativo al Absolut tradicional.</field>
-		<field name="precio">30</field>
+		<field name="precio">30.00</field>
+		<field name="image" type="base64" file="liquorstore_app/static/images/absolut-vodka.png"/>
 	</record>
 
 	<record model="liquorstore.alcohol" id="liquorstore_alcohol_esa4">
@@ -39,10 +43,11 @@
 		<field name="descripcion">Licor que tiene un 35 % de contenido alcohólico.
 			Se elabora con hierbas y es muy popular en toda Europa.
 			En España lleva un par de años en continuo auge.</field>
-		<field name="precio">20</field>
+		<field name="precio">20.00</field>
+		<field name="image" type="base64" file="liquorstore_app/static/images/jager.png"/>
 	</record>
 
-<record model="liquorstore.alcohol" id="liquorstore_alcohol_esa5">
+	<record model="liquorstore.alcohol" id="liquorstore_alcohol_esa5">
 		<field name="name">Baileys</field>
         <field name="marca">Licor</field>
 		<field name="descripcion">Baileys fue el primer licor en combinar crema
@@ -50,7 +55,8 @@
 			su comercialización. La crema irlandesa puede beberse sola con hielo
 			o como parte de un cóctel, siendo su contenido alcohólico de un 17%
 			del volumen.</field>
-	<field name="precio">50</field>
+		<field name="precio">50.00</field>
+		<field name="image" type="base64" file="liquorstore_app/static/images/baileys.png"/>
 	</record>
 
 
@@ -61,7 +67,8 @@
 			dándole un sabor y aroma distintivos, la marca de Tennessee
 			es una de las más vendidas del mundo. Conocida por sus botellas
 			cuadradas y su etiqueta negra.</field>
-		<field name="precio">80</field>
+		<field name="precio">80.00</field>
+		<field name="image" type="base64" file="liquorstore_app/static/images/jack.png"/>
 	</record>
 
 </odoo>

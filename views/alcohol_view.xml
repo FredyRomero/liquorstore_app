@@ -33,12 +33,12 @@
 	<field name="name">Alcohol List</field>
 	<field name="model">liquorstore.alcohol</field>
 	<field name="arch" type="xml">
-	<tree>
+	<sheet>
 		<field name="name"/>
         <field name="marca"/>
 		<field name="precio"/>
-		<field name="image" widget="image" width="40" height="30"/>
-	</tree>
+		<field name="image" widget="image" width="30" height="50"/>
+	</sheet>
 	</field>
 </record>
 

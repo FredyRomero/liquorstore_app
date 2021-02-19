@@ -8,16 +8,14 @@ class Alcohol(models.Model):
     name = fields.Char('Nombre', required=True)
     marca = fields.Char('Marca', required=True)
     descripcion = fields.Char('Descripcion')
-    image = fields.Binary('Image', help="../static/description/imgliquorstore.png")
+    image = fields.Binary('Image')
     active = fields.Boolean('Active?', default=True)
-    precio = fields.Integer('Precio', required=True)
+    precio = fields.Float('Precio', required=True)
 
     tipos_id = fields.Many2one(
         'liquorstore.alcohol.tipo',
-        'Tipo',
-        ondelete='restrict',
-        required=True)
-    parent_path = fields.Char(index=True)
+        'alcohol_id',
+        ondelete='restrict')
 
     @api.constrains('precio')
     def button_check_price(self):
