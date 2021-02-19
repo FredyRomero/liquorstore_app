@@ -1,0 +1,118 @@
+Index: models/liquorstore_alcohol_tipo.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from odoo import api, fields, models\n\nclass AlcoholTipo(models.Model):\n    _name = 'liquorstore.alcohol.tipo'\n    _description = 'Alcohol Category'\n    _parent_store = True\n    name = fields.Char('Name', required=True)\n\n    parent_id = fields.Many2one(\n        'liquorstore.alcohol.tipo',\n        'Parent Category',\n        ondelete='restrict')\n    parent_path = fields.Char(index=True)\n\n    # Optional but good to have:\n    child_ids = fields.One2many(\n        'liquorstore.alcohol.tipo',\n        'parent_id',\n        'Subcategories')\n\n    highlighted_id = fields.Reference(\n        [('liquorstore.alcohol.tipo', 'Alcohol'), ('res.partner', 'Author')],\n        'Category Highlight',\n    )
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- models/liquorstore_alcohol_tipo.py	(revision 2a3e248a9d41eba704548f86ca4a1ebf0253767f)
++++ models/liquorstore_alcohol_tipo.py	(date 1613548498956)
+@@ -13,6 +13,11 @@
+     parent_path = fields.Char(index=True)
+ 
+     # Optional but good to have:
++    parent_id = fields.Many2one(
++        'liquorstore.alcohol.tipo',
++        'Parent Category',
++        ondelete='restrict')
++
+     child_ids = fields.One2many(
+         'liquorstore.alcohol.tipo',
+         'parent_id',
+@@ -20,5 +25,5 @@
+ 
+     highlighted_id = fields.Reference(
+         [('liquorstore.alcohol.tipo', 'Alcohol'), ('res.partner', 'Author')],
+-        'Category Highlight',
++        'Category Highlight'
+     )
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"BranchesTreeState\">\n    <expand>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </expand>\n    <select />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"7318f1a5-1c47-44b4-9356-52ae5c93cfe1\" name=\"Default Changelist\" comment=\"Actualizacion de alcohol_view.xml(agragado el precio)\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"ProjectId\" id=\"1oWusgsOzkqBNdhhJJdpwrbKtF3\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n    <option name=\"showMembers\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"org.jetbrains.plugins.github.ui.GithubSettingsConfigurable\" />\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"7318f1a5-1c47-44b4-9356-52ae5c93cfe1\" name=\"Default Changelist\" comment=\"\" />\n      <created>1613414875290</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1613414875290</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"En este commit se agrega el modelo Tipos\">\n      <created>1613459069855</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1613459069855</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Actualizacion de alcohol_view.xml(agragado el precio)\">\n      <created>1613547150496</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1613547150496</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <ignored-roots>\n      <path value=\"$PROJECT_DIR$\" />\n    </ignored-roots>\n    <MESSAGE value=\"En este commit se agrega el modelo Tipos\" />\n    <MESSAGE value=\"Actualizacion de alcohol_view.xml(agragado el precio)\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Actualizacion de alcohol_view.xml(agragado el precio)\" />\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"1820\" y=\"159\" key=\"SettingsEditor\" timestamp=\"1613547251009\">\n      <screen x=\"1366\" y=\"0\" width=\"1920\" height=\"1080\" />\n    </state>\n    <state x=\"1820\" y=\"159\" key=\"SettingsEditor/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080\" timestamp=\"1613547251009\" />\n    <state x=\"1926\" y=\"260\" width=\"800\" height=\"528\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1613547072534\">\n      <screen x=\"1366\" y=\"0\" width=\"1920\" height=\"1080\" />\n    </state>\n    <state x=\"1926\" y=\"260\" width=\"800\" height=\"528\" key=\"Vcs.Push.Dialog.v2/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080\" timestamp=\"1613547072534\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 2a3e248a9d41eba704548f86ca4a1ebf0253767f)
++++ .idea/workspace.xml	(date 1613552119056)
+@@ -22,7 +22,14 @@
+     <select />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="7318f1a5-1c47-44b4-9356-52ae5c93cfe1" name="Default Changelist" comment="Actualizacion de alcohol_view.xml(agragado el precio)" />
++    <list default="true" id="7318f1a5-1c47-44b4-9356-52ae5c93cfe1" name="Default Changelist" comment="Actualizacion de alcohol_view.xml(agragado el precio)">
++      <change beforePath="$PROJECT_DIR$/.idea/liquorstore_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/liquorstore_app.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/models/liquorstore_alcohol.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/liquorstore_alcohol.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/models/liquorstore_alcohol_tipo.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/liquorstore_alcohol_tipo.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/views/alcohol_tipos_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/alcohol_tipos_view.xml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -38,6 +45,13 @@
+       <filtered-out-file-type name="TAG" />
+       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+     </file-type-list>
++  </component>
++  <component name="GithubPullRequestsUISettings">
++    <option name="hiddenUrls">
++      <set>
++        <option value="https://github.com/FredyRomero/liquorstore_app" />
++      </set>
++    </option>
+   </component>
+   <component name="ProjectId" id="1oWusgsOzkqBNdhhJJdpwrbKtF3" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+@@ -49,8 +63,8 @@
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/../library_app" />
++    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -75,7 +89,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1613547150496</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Actualizacion de alcohol_view.xml(agragado el precio)">
++      <created>1613547348423</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1613547348423</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -99,13 +120,17 @@
+     <option name="LAST_COMMIT_MESSAGE" value="Actualizacion de alcohol_view.xml(agragado el precio)" />
+   </component>
+   <component name="WindowStateProjectService">
+-    <state x="1820" y="159" key="SettingsEditor" timestamp="1613547251009">
++    <state x="2109" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1613550703617">
+       <screen x="1366" y="0" width="1920" height="1080" />
+     </state>
+-    <state x="1820" y="159" key="SettingsEditor/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613547251009" />
+-    <state x="1926" y="260" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1613547072534">
++    <state x="2109" y="297" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613550703617" />
++    <state x="1820" y="159" key="SettingsEditor" timestamp="1613549729462">
+       <screen x="1366" y="0" width="1920" height="1080" />
+     </state>
+-    <state x="1926" y="260" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613547072534" />
++    <state x="1820" y="159" key="SettingsEditor/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613549729462" />
++    <state x="1926" y="260" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1613547353186">
++      <screen x="1366" y="0" width="1920" height="1080" />
++    </state>
++    <state x="1926" y="260" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613547353186" />
+   </component>
+ </project>
+\ No newline at end of file

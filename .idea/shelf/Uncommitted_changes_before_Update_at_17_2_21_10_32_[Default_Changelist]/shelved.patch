@@ -1,0 +1,149 @@
+Index: models/liquorstore_alcohol.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from odoo import fields, models, api\nfrom odoo.exceptions import Warning\n\n\nclass Alcohol(models.Model):\n    _name = 'liquorstore.alcohol'\n    _description = 'Alcohol'\n    name = fields.Char('Nombre', required=True)\n    marca = fields.Char('Marca')\n    descripcion = fields.Char('Descripcion')\n    image = fields.Binary('Image')\n    active = fields.Boolean('Active?', default=True)\n    precio = fields.Integer('Precio')\n    # date_published = fields.Date()\n    # publisher_id = fields.Many2one('res.partner', string='Publisher')\n    # author_ids = fields.Many2many('res.partner', string='Authors')\n    # name = fields.Char(translate=True, required=True)\n    tipos_id = fields.Many2one('liquorstore.alcohol.tipo', string='Tipo')
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- models/liquorstore_alcohol.py	(revision af80d31e62511f2afbf9a2c89759c29a18fd2443)
++++ models/liquorstore_alcohol.py	(date 1613554298980)
+@@ -11,8 +11,4 @@
+     image = fields.Binary('Image')
+     active = fields.Boolean('Active?', default=True)
+     precio = fields.Integer('Precio')
+-    # date_published = fields.Date()
+-    # publisher_id = fields.Many2one('res.partner', string='Publisher')
+-    # author_ids = fields.Many2many('res.partner', string='Authors')
+-    # name = fields.Char(translate=True, required=True)
+     tipos_id = fields.Many2one('liquorstore.alcohol.tipo', string='Tipo')
+\ No newline at end of file
+Index: views/alcohol_view.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\"?>\n<odoo>\n\t<record id=\"view_form_alcohol\" model=\"ir.ui.view\">\n\t\t<field name=\"name\">Alcohol Form</field>\n\t\t<field name=\"model\">liquorstore.alcohol</field>\n\t\t<field name=\"arch\" type=\"xml\">\n            <form string=\"Alcohol\">\n\t<header>\n\t\t<!-- Buttons will go here -->\n        <!--<button name=\"button_check_isbn\" type=\"object\" string=\"Check ISBN\" />-->\n\t</header>\n    <sheet>\n\t<!-- Content goes here: -->\n\t<group name=\"group_top\">\n\t\t<group name=\"group_left\">\n\t\t\t<field name=\"name\"/>\n            <field name=\"marca\" />\n\t\t\t<field name=\"descripcion\"/>\n\t\t\t<field name=\"tipos_id\"/>\n\t\t\t<field name=\"precio\"/>\n\n\n\t\t\t<!--<field name=\"author_ids\" widget=\"many2many_tags\" />\n\t\t\t<field name=\"publisher_id\" />\n\t\t\t<field name=\"date_published\" />-->\n\t\t</group>\n\t\t<group name=\"group_right\">\n\t\t\t\t<field name=\"image\" widget=\"image\" width=\"200\" height=\"250\"/>\n\n\t\t</group>\n    </group>\n    </sheet>\n            </form>\n\t\t</field>\n\t</record>\n\n    <record id=\"view_tree_alcohol\" model=\"ir.ui.view\">\n\t<field name=\"name\">Alcohol List</field>\n\t<field name=\"model\">liquorstore.alcohol</field>\n\t<field name=\"arch\" type=\"xml\">\n\t<tree>\n\t\t<field name=\"name\"/>\n        <field name=\"marca\"/>\n\t\t<field name=\"precio\"/>\n\t\t<field name=\"image\" widget=\"image\" width=\"50\" height=\"50\"/>\n\n\t\t<!--<field name=\"author_ids\" widget=\"many2many_tags\" />\n\t\t<field name=\"publisher_id\"/>\n\t\t<field name=\"date_published\"/>-->\n\t</tree>\n\t</field>\n</record>\n\n\t<record id=\"view_search_alcohol\" model=\"ir.ui.view\">\n\t<field name=\"name\">Alcohol Filters</field>\n\t<field name=\"model\">liquorstore.alcohol</field>\n\t<field name=\"arch\" type=\"xml\">\n\t<search>\n\t\t<field name=\"marca\"/>\n\t\t<filter name=\"filter_inactive\"\n\t\t\t\t string=\"Inactive\"\n\t\t\t\t domain=\"[('active','=',True)]\"/>\n\t\t<filter name=\"filter_active\"\n\t\t\t\t string=\"Active\"\n\t\t\t\t domain=\"[('active','=',False)]\"/>\n\t</search>\n\t</field>\n</record>\n\n</odoo>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- views/alcohol_view.xml	(revision af80d31e62511f2afbf9a2c89759c29a18fd2443)
++++ views/alcohol_view.xml	(date 1613554298972)
+@@ -18,11 +18,6 @@
+ 			<field name="descripcion"/>
+ 			<field name="tipos_id"/>
+ 			<field name="precio"/>
+-
+-
+-			<!--<field name="author_ids" widget="many2many_tags" />
+-			<field name="publisher_id" />
+-			<field name="date_published" />-->
+ 		</group>
+ 		<group name="group_right">
+ 				<field name="image" widget="image" width="200" height="250"/>
+@@ -44,9 +39,6 @@
+ 		<field name="precio"/>
+ 		<field name="image" widget="image" width="50" height="50"/>
+ 
+-		<!--<field name="author_ids" widget="many2many_tags" />
+-		<field name="publisher_id"/>
+-		<field name="date_published"/>-->
+ 	</tree>
+ 	</field>
+ </record>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"BranchesTreeState\">\n    <expand>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </expand>\n    <select />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"7318f1a5-1c47-44b4-9356-52ae5c93cfe1\" name=\"Default Changelist\" comment=\"Precio agregado(Michu)\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/liquorstore_app.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/liquorstore_app.iml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/models/liquorstore_alcohol.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/models/liquorstore_alcohol.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/models/liquorstore_alcohol_tipo.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/models/liquorstore_alcohol_tipo.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/views/alcohol_view.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/views/alcohol_view.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Rebase.Settings\">\n    <option name=\"NEW_BASE\" value=\"origin/master\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"ProjectId\" id=\"1oWusgsOzkqBNdhhJJdpwrbKtF3\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n    <option name=\"showMembers\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"7318f1a5-1c47-44b4-9356-52ae5c93cfe1\" name=\"Default Changelist\" comment=\"\" />\n      <created>1613414875290</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1613414875290</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"En este commit se agrega el modelo Tipos\">\n      <created>1613459069855</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1613459069855</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Actualizacion de alcohol_view.xml(agragado el precio)\">\n      <created>1613547150496</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1613547150496</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Precio agregado(Michu)\">\n      <created>1613551245598</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1613551245598</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"4\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <ignored-roots>\n      <path value=\"$PROJECT_DIR$\" />\n    </ignored-roots>\n    <MESSAGE value=\"En este commit se agrega el modelo Tipos\" />\n    <MESSAGE value=\"Actualizacion de alcohol_view.xml(agragado el precio)\" />\n    <MESSAGE value=\"Precio agregado(Michu)\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Precio agregado(Michu)\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision af80d31e62511f2afbf9a2c89759c29a18fd2443)
++++ .idea/workspace.xml	(date 1613554345400)
+@@ -22,20 +22,15 @@
+     <select />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="7318f1a5-1c47-44b4-9356-52ae5c93cfe1" name="Default Changelist" comment="Precio agregado(Michu)">
+-      <change beforePath="$PROJECT_DIR$/.idea/liquorstore_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/liquorstore_app.iml" afterDir="false" />
++    <list default="true" id="7318f1a5-1c47-44b4-9356-52ae5c93cfe1" name="Default Changelist" comment="Actualizacion de alcohol_view.xml(agragado el precio)">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/models/liquorstore_alcohol.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/liquorstore_alcohol.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/models/liquorstore_alcohol_tipo.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/liquorstore_alcohol_tipo.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/views/alcohol_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/alcohol_view.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="Git.Rebase.Settings">
+-    <option name="NEW_BASE" value="origin/master" />
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -59,7 +54,7 @@
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
++    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -84,14 +79,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1613547150496</updated>
+     </task>
+-    <task id="LOCAL-00003" summary="Precio agregado(Michu)">
+-      <created>1613551245598</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1613551245598</updated>
+-    </task>
+-    <option name="localTasksCounter" value="4" />
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -112,7 +100,20 @@
+     </ignored-roots>
+     <MESSAGE value="En este commit se agrega el modelo Tipos" />
+     <MESSAGE value="Actualizacion de alcohol_view.xml(agragado el precio)" />
+-    <MESSAGE value="Precio agregado(Michu)" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Precio agregado(Michu)" />
++    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion de alcohol_view.xml(agragado el precio)" />
++  </component>
++  <component name="WindowStateProjectService">
++    <state x="1820" y="159" key="SettingsEditor" timestamp="1613547251009">
++      <screen x="1366" y="0" width="1920" height="1080" />
++    </state>
++    <state x="1820" y="159" key="SettingsEditor/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613547251009" />
++    <state x="1926" y="260" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1613547072534">
++      <screen x="1366" y="0" width="1920" height="1080" />
++    </state>
++    <state x="1926" y="260" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613547072534" />
++    <state x="2107" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1613554345366">
++      <screen x="1366" y="0" width="1920" height="1080" />
++    </state>
++    <state x="2107" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1613554345366" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/liquorstore_app.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"PYTHON_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\">\n    <content url=\"file://$MODULE_DIR$\" />\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.8\" jdkType=\"Python SDK\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/liquorstore_app.iml	(revision af80d31e62511f2afbf9a2c89759c29a18fd2443)
++++ .idea/liquorstore_app.iml	(date 1613554345396)
+@@ -2,7 +2,7 @@
+ <module type="PYTHON_MODULE" version="4">
+   <component name="NewModuleRootManager">
+     <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
++    <orderEntry type="jdk" jdkName="Python 3.6" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file

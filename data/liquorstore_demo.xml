@@ -1,22 +1,5 @@
 <?xml version="1.0"?>
 <odoo noupdate="1">
-	<!-- Data to load -->
-	<!--<record model="res.partner" id="res_partner_tolkien">
-		<field name="name">J. R. R. Tolkien</field>
-	</record>
-
-    <record model="res.partner" id="res_partner_dj">
-		<field name="name">Juan El DJ</field>
-	</record>
-
-
-	<record model="res.partner" id="res_partner_mt">
-		<field name="name">Editorial Minotauro</field>
-	</record>
-
-    	<record model="res.partner" id="res_partner_pp">
-		<field name="name">Poncho Pincha</field>
-	</record>-->
 
 	<record model="liquorstore.alcohol" id="liquorstore_alcohol_esa1">
 		<field name="name">Captain Morgan</field>
@@ -26,9 +9,6 @@
 			Sir Henry Morgan. El eslogan de Captain Morgan es:
 			“¿Hay un pequeño capitán en ti?”.</field>
 		<field name="precio">20</field>
-		<!--<field name="author_ids" eval="[(4, ref('res_partner_tolkien'))]" />
-		<field name="date_published">1954-07-29</field>
-		<field name="publisher_id" ref="res_partner_mt" />-->
 	</record>
 
 
@@ -40,9 +20,6 @@
 			Es un tipo de baijiu hecho de sorgo.
 			Estrella Roja es su marca más conocida..</field>
 		<field name="precio">25</field>
-		<!--<field name="author_ids" eval="[(4, ref('res_partner_dj'))]" />
-		<field name="date_published" eval="(datetime.now() + relativedelta(months=1)).strftime('%Y-%m-%d')" />
-		<field name="publisher_id" ref="res_partner_pp" />-->
 	</record>
 
 
@@ -54,9 +31,6 @@
 			es Absolut. La marca cuenta con distintos sabores,
 			para darle un toque alternativo al Absolut tradicional.</field>
 		<field name="precio">30</field>
-		<!--<field name="author_ids" eval="[(4, ref('res_partner_tolkien'))]" />
-		<field name="date_published" eval="(datetime.now()).strftime('%Y-%m-%d')" />
-		<field name="publisher_id" ref="res_partner_mt" />-->
 	</record>
 
 	<record model="liquorstore.alcohol" id="liquorstore_alcohol_esa4">
@@ -66,9 +40,6 @@
 			Se elabora con hierbas y es muy popular en toda Europa.
 			En España lleva un par de años en continuo auge.</field>
 		<field name="precio">20</field>
-		<!--<field name="author_ids" eval="[(4, ref('res_partner_dj'))]" />
-		<field name="date_published" eval="(datetime.now() + relativedelta(months=1)).strftime('%Y-%m-%d')" />
-		<field name="publisher_id" ref="res_partner_pp" />-->
 	</record>
 
 <record model="liquorstore.alcohol" id="liquorstore_alcohol_esa5">
@@ -80,9 +51,6 @@
 			o como parte de un cóctel, siendo su contenido alcohólico de un 17%
 			del volumen.</field>
 	<field name="precio">50</field>
-		<!--<field name="author_ids" eval="[(4, ref('res_partner_dj'))]" />
-		<field name="date_published" eval="(datetime.now() + relativedelta(months=1)).strftime('%Y-%m-%d')" />
-		<field name="publisher_id" ref="res_partner_pp" />-->
 	</record>
 
 
@@ -94,9 +62,6 @@
 			es una de las más vendidas del mundo. Conocida por sus botellas
 			cuadradas y su etiqueta negra.</field>
 		<field name="precio">80</field>
-		<!--<field name="author_ids" eval="[(4, ref('res_partner_dj'))]" />
-		<field name="date_published" eval="(datetime.now() + relativedelta(months=1)).strftime('%Y-%m-%d')" />
-		<field name="publisher_id" ref="res_partner_pp" />-->
 	</record>
 
 </odoo>
