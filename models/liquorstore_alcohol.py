@@ -16,6 +16,7 @@ class Alcohol(models.Model):
         'liquorstore.alcohol.tipo',
         'Tipo',
         ondelete='restrict')
+    parent_path = fields.Char(index=True)
 
     @api.constrains('precio')
     def button_check_price(self):

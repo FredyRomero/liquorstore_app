@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7318f1a5-1c47-44b4-9356-52ae5c93cfe1" name="Default Changelist" comment="commit introduccion de imagenes de demostracion">
-      <change afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
+    <list default="true" id="7318f1a5-1c47-44b4-9356-52ae5c93cfe1" name="Default Changelist" comment="Solucion error en el archivo alcohol_view.xml cambio de sheet a tree">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/liquorstore_alcohol.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/liquorstore_alcohol.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/alcohol_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/alcohol_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/liquorstore_alcohol_tipo.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/liquorstore_alcohol_tipo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +56,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613754967314</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Solucion error en el archivo alcohol_view.xml cambio de sheet a tree">
+      <created>1613903851137</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613903851137</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -77,6 +83,7 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="commit introduccion de imagenes de demostracion" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit introduccion de imagenes de demostracion" />
+    <MESSAGE value="Solucion error en el archivo alcohol_view.xml cambio de sheet a tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solucion error en el archivo alcohol_view.xml cambio de sheet a tree" />
   </component>
 </project>
