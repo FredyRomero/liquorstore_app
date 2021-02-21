@@ -14,7 +14,7 @@ class Alcohol(models.Model):
 
     tipos_id = fields.Many2one(
         'liquorstore.alcohol.tipo',
-        'alcohol_id',
+        'Tipo',
         ondelete='restrict')
 
     @api.constrains('precio')

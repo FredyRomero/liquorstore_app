@@ -11,7 +11,7 @@
 	</header>
     <sheet>
 	<!-- Content goes here: -->
-	<group name="group_top">
+		<group name="group_top">
 		<group name="group_left">
 			<field name="name"/>
             <field name="marca" />
@@ -20,10 +20,10 @@
 			<field name="precio"/>
 		</group>
 		<group name="group_right">
-				<field name="image" widget="image" width="200" height="250"/>
+			<field name="image" widget="image" width="200" height="250"/>
 
 		</group>
-    </group>
+    	</group>
     </sheet>
             </form>
 		</field>
@@ -33,12 +33,12 @@
 	<field name="name">Alcohol List</field>
 	<field name="model">liquorstore.alcohol</field>
 	<field name="arch" type="xml">
-	<sheet>
+	<tree>
 		<field name="name"/>
         <field name="marca"/>
 		<field name="precio"/>
 		<field name="image" widget="image" width="30" height="50"/>
-	</sheet>
+	</tree>
 	</field>
 </record>
 
