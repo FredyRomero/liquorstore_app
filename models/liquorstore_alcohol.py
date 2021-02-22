@@ -13,7 +13,7 @@ class Alcohol(models.Model):
     precio = fields.Float('Precio', required=True)
 
     tipos_id = fields.Many2one(
-        'liquorstore.alcohol.tipo',
+        'liquorstore.alcohol',
         'Tipo',
         ondelete='restrict')
     parent_path = fields.Char(index=True)
